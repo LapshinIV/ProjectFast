@@ -1,0 +1,14 @@
+<div>
+    <table class="features-table">
+        <tr>
+            <td class="grey">Carrier</td>
+            <td class="grey">FN-start</td>
+            <td class="green">FN-end</td>
+        </tr>
+        <tr ng-repeat="flight in flights">
+            <td class="grey">{{flight.Carrier}}</td>
+            <td class="grey">{{flight.flight_number_start}}</td>
+            <td class="green">{{flight.flight_number_end}}</td>
+        </tr>
+    </table>
+</div>
