@@ -1,6 +1,6 @@
 ## Getting Started
 
-To get you started you can simply clone the angular-seed repository and install the dependencies:
+To get you started you can simply clone the ProjectFast repository and install the dependencies:
 
 git clone https://github.com/LapshinIV/ProjectFast.git
 cd ProjectFast
