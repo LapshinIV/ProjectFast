@@ -1,6 +1,8 @@
 ## Getting Started
+```
 git clone https://github.com/LapshinIV/ProjectFast.git
 cd ProjectFast
+```
 ### Install Dependencies and run server
 ```
 npm install
