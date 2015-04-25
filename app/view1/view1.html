@@ -1,14 +1,17 @@
-<div>
-    <table class="features-table">
-        <tr>
-            <td class="grey">Carrier</td>
-            <td class="grey">FN-start</td>
-            <td class="green">FN-end</td>
-        </tr>
-        <tr ng-repeat="flight in flights">
-            <td class="grey">{{flight.Carrier}}</td>
-            <td class="grey">{{flight.flight_number_start}}</td>
-            <td class="green">{{flight.flight_number_end}}</td>
-        </tr>
+<table class="centered">
+        <thead>
+            <tr class="#e0e0e0 grey lighten-2">
+                <th>Carrier</th>
+                <th>FN-start</th>
+                <th>FN-end</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="flight in flights" class="#fafafa grey lighten-5">
+                <td>{{flight.Carrier}}</td>
+                <td>{{flight.flight_number_start}}</td>
+                <td>{{flight.flight_number_end}}</td>
+            </tr>
+        </tbody>
     </table>
 </div>
