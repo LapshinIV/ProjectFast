@@ -1,17 +1,21 @@
-<table class="centered">
-        <thead>
-            <tr class="#e0e0e0 grey lighten-2">
-                <th>Carrier</th>
-                <th>FN-start</th>
-                <th>FN-end</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="flight in flights" class="#fafafa grey lighten-5">
-                <td>{{flight.Carrier}}</td>
-                <td>{{flight.flight_number_start}}</td>
-                <td>{{flight.flight_number_end}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>Carrier</th>
+        <th>FN-start</th>
+        <th>FN-end</th>
+    </tr>
+</thead>
+<tbody>
+
+<select ng-model="flight" ng-options="flight.carrier_code for flight in flights2 | unique: 'carrier_code'" ng-change="change()">
+    <option value="">Carrier_code</option>
+</select>
+    <tr ng-repeat="flight in flights">
+        <td>{{flight.carrier_code}}</td>
+        <td>{{flight.flight_number_start}}</td>
+        <td>{{flight.flight_number_end}}</td>
+    </tr>
+</tbody>
+</table>
+
