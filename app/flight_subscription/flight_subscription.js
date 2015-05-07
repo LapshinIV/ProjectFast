@@ -7,6 +7,7 @@ angular.module('myApp.flight_subscription', ['ngRoute'])
     controller: 'flight_subscriptionCtrl'
   });
 }])
+
 .filter('unique', function() {
     return function(collection, keyname) {
         var output = [],
@@ -23,17 +24,17 @@ angular.module('myApp.flight_subscription', ['ngRoute'])
     };
 })
 .controller('flight_subscriptionCtrl', function ViewController ($scope, $http) {
-$scope.change=function(){
-
-    $http.get('http://localhost:8080/flights_subscriptions/'+ $scope.flight.carrier_code)
+    $scope.change=function(){
+        $http.get('http://localhost:8080/flights_subscriptions/'+ $scope.flight.carrier_code)
         .success(function(data){
-        $scope.flights = data;
-    });
-};
-    $http
+            $scope.flights = data;
+        });
+    };
+        $http
         .get('http://localhost:8080/flights_subscriptions')
 //      .get('https://api.mongolab.com/api/1/databases/macaw/collections/data?apiKey=vGEjG-IUrqXsZWCrB6pzkQ4NVlTZEDmZ')
         .success(function (data) {
+            $scope.flights = data;
             $scope.flights2 = data;
         });
 });
