@@ -25,16 +25,16 @@ angular.module('myApp.flight_subscription', ['ngRoute'])
 })
 .controller('flight_subscriptionCtrl', function ViewController ($scope, $http) {
     $scope.change=function(){
-        $http.get('http://localhost:8080/flights_subscriptions/'+ $scope.flight.carrier_code)
+        $http.get('http://localhost:8080/flight_subscriptions/'+ $scope.flight.carrier_code)
         .success(function(data){
             $scope.flights = data;
         });
     };
         $http
-        .get('http://localhost:8080/flights_subscriptions')
+//      .get('./data/Flights_Full.json')
+        .get('http://localhost:8080/carriers')
 //      .get('https://api.mongolab.com/api/1/databases/macaw/collections/data?apiKey=vGEjG-IUrqXsZWCrB6pzkQ4NVlTZEDmZ')
         .success(function (data) {
-            $scope.flights = data;
             $scope.flights2 = data;
         });
 });
