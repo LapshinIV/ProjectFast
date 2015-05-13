@@ -1,18 +1,19 @@
 angular.module('myApp.flight_subscription', ['ngRoute'])
 
-
+.run(function($http){
+    $http.defaults.headers.common.Authorization = 'Basic Zm9vOmJhcg=='
+})
 .config(['$routeProvider', function($stateProvider) {
-  $stateProvider.when('/flight_subscription', {
-    templateUrl: 'flight_subscription/flight_subscription.html',
-    controller: 'flight_subscriptionCtrl'
-  });
+    $stateProvider.when('/flight_subscription', {
+        templateUrl: 'flight_subscription/flight_subscription.html',
+        controller: 'flight_subscriptionCtrl'
+    });
 }])
 
 .filter('unique', function() {
     return function(collection, keyname) {
         var output = [],
             keys = [];
-
         angular.forEach(collection, function(item) {
             var key = item[keyname];
             if(keys.indexOf(key) === -1) {
@@ -31,8 +32,8 @@ angular.module('myApp.flight_subscription', ['ngRoute'])
         });
     };
         $http
-//      .get('./data/Flights_Full.json')
         .get('http://localhost:8080/carriers')
+//      .get('./data/Flights_Full.json')
 //      .get('https://api.mongolab.com/api/1/databases/macaw/collections/data?apiKey=vGEjG-IUrqXsZWCrB6pzkQ4NVlTZEDmZ')
         .success(function (data) {
             $scope.flights2 = data;
