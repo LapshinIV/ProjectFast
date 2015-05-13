@@ -1,7 +1,7 @@
 angular.module('myApp.flight_subscription', ['ngRoute'])
 
 .run(function($http){
-    $http.defaults.headers.common.Authorization = 'Basic Zm9vOmJhcg=='
+    $http.defaults.headers.common.Authorization = 'Basic myPass'
 })
 .config(['$routeProvider', function($stateProvider) {
     $stateProvider.when('/flight_subscription', {
