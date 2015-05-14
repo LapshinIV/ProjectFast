@@ -7,8 +7,7 @@
     </tr>
 </thead>
 <tbody>
-
-<select ng-model="flight" ng-options="flight.carrier_code for flight in flights2 | unique: 'carrier_code'" ng-change="change()">
+<select ng-model="flight" ng-options="flight2 for flight2 in flights2" ng-change="change()">
     <option value="">Carrier_code</option>
 </select>
     <tr ng-repeat="flight in flights">

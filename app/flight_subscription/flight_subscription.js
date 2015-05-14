@@ -1,7 +1,7 @@
 angular.module('myApp.flight_subscription', ['ngRoute'])
 
 .run(function($http){
-    $http.defaults.headers.common.Authorization = 'Basic myPass'
+    $http.defaults.headers.common.Authorization = 'Basic Zm9vOmJhcg'
 })
 .config(['$routeProvider', function($stateProvider) {
     $stateProvider.when('/flight_subscription', {
@@ -10,23 +10,9 @@ angular.module('myApp.flight_subscription', ['ngRoute'])
     });
 }])
 
-.filter('unique', function() {
-    return function(collection, keyname) {
-        var output = [],
-            keys = [];
-        angular.forEach(collection, function(item) {
-            var key = item[keyname];
-            if(keys.indexOf(key) === -1) {
-                keys.push(key);
-                output.push(item);
-            }
-        });
-        return output;
-    };
-})
 .controller('flight_subscriptionCtrl', function ViewController ($scope, $http) {
     $scope.change=function(){
-        $http.get('http://localhost:8080/flight_subscriptions/'+ $scope.flight.carrier_code)
+        $http.get('http://localhost:8080/flight_subscriptions/'+ $scope.flight)
         .success(function(data){
             $scope.flights = data;
         });
